@@ -1,0 +1,19 @@
+#!/bin/sh /etc/rc.common
+
+START=50
+
+SERVICE_USE_PID=1
+
+server=114.114.114.114,8.8.4.4
+iplist=/etc/chinadns_iplist.txt
+
+start() {
+    service_start /usr/bin/chinadns \
+        -s $server \
+        -l $iplist \
+        -p 5353
+}
+
+stop() {
+    service_stop /usr/bin/chinadns
+}

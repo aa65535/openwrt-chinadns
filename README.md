@@ -27,6 +27,7 @@ OpenWrt's ChinaDNS-C Makefile
  - 可搭配路由器自带的 Dnsmasq 使用 借助其 DNS 缓存提升查询速度
 
  > 将 `/etc/init.d/chinadns` 内容修改为 [chinadns.masq][3]
+ >
  > Dnsmasq 配置`(/etc/dnsmasq.conf)`如下
  > ```
  > no-resolv

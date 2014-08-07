@@ -4,13 +4,15 @@ START=50
 
 SERVICE_USE_PID=1
 
-server=114.114.114.114,8.8.4.4
+server=114.114.114.114,208.67.222.222,8.8.8.8
 iplist=/etc/chinadns_iplist.txt
+routes=/etc/chinadns_chnroute.txt
 
 start() {
     service_start /usr/bin/chinadns \
         -s $server \
         -l $iplist \
+        -c $routes \
         -p 5353
 }
 

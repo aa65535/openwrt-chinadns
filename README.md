@@ -3,6 +3,22 @@ OpenWrt's ChinaDNS-C Makefile
 
  > 编译时默认从 [ChinaDNS-C][1] 下载最新源码
 
+ > 保存文件名为 master.zip
+
+ > 可使用如下方法强制每次编译时重新下载新的源码
+
+ > 编辑 `scripts/download.pl` 相应部分改为:
+ > ```perl
+ > while (!$ok) {
+ >     my $mirror = shift @mirrors;
+ >     $mirror or die "No more mirrors to try - giving up.\n";
+ >     $filename eq "master.zip" and unlink "$target/$filename";
+ >     download($mirror);
+ >     -f "$target/$filename" and $ok = 1;
+ > }
+ > 
+ > ```
+
 编译说明
 ---
 
@@ -15,7 +31,7 @@ OpenWrt's ChinaDNS-C Makefile
  > make menuconfig
  > # 开始编译 ChinaDNS-C
  > rm -f dl/master.zip && make package/network/chinadns/compile V=99
- > # 若上面语句编译出错 使用下面语句编译
+ > # 若上面语句编译出错 需要先使用下面语句编译出 Toolchain
  > make V=99
  > ```
 

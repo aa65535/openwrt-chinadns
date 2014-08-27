@@ -50,7 +50,13 @@ OpenWrt's ChinaDNS-C Makefile
  > server=127.0.0.1#5353
  > ```
 
+ - [chnroute][4] 可以使用下面命令更新
+    > ```
+    > curl 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > /etc/chinadns_chnroute.txt
+    > ```
+
 
   [1]: https://github.com/clowwindy/ChinaDNS-C
   [2]: https://sourceforge.net/projects/openwrt-dist/files/chinadns-c/
   [3]: https://github.com/aa65535/openwrt-chinadns/blob/master/files/chinadns.masq
+  [4]: https://github.com/aa65535/openwrt-chinadns/blob/master/files/chinadns.route

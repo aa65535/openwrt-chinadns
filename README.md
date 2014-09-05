@@ -55,8 +55,20 @@ OpenWrt's ChinaDNS-C Makefile
     > curl 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > /etc/chinadns_chnroute.txt
     > ```
 
+相关项目
+---
+
+ Name                     | Description
+ -------------------------|-----------------------------------
+ [openwrt-chinadns][5]    | OpenWrt's ChinaDNS-C Makefile
+ [openwrt-dnsmasq][6]     | OpenWrt's Dnsmasq Patch & Makefile
+ [openwrt-shadowsocks][7] | OpenWrt's ShadowSocks Makefile
+
 
   [1]: https://github.com/clowwindy/ChinaDNS-C
   [2]: https://sourceforge.net/projects/openwrt-dist/files/chinadns-c/
   [3]: https://github.com/aa65535/openwrt-chinadns/blob/master/files/chinadns.masq
   [4]: https://github.com/aa65535/openwrt-chinadns/blob/master/files/chinadns.route
+  [5]: https://github.com/aa65535/openwrt-chinadns
+  [6]: https://github.com/aa65535/openwrt-dnsmasq
+  [7]: https://github.com/aa65535/openwrt-shadowsocks

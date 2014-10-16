@@ -6,6 +6,7 @@ PKG_VERSION:=1.1.7
 PKG_SOURCE:=master.zip
 PKG_SOURCE_URL:=https://github.com/clowwindy/ChinaDNS-C/archive
 PKG_CAT:=unzip
+PKG_MAINTAINER:=clowwindy <clowwindy42@gmail.com>
 
 PKG_LICENSE:=GPLv2
 PKG_LICENSE_FILES:=COPYING

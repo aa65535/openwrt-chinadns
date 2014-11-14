@@ -23,12 +23,10 @@ OpenWrt's ChinaDNS-C Makefile
 配置说明
 ---
 
- - 默认 DNS 服务器为 `127.0.0.1` 端口 `53`
+ - 默认 DNS 服务器端口为 `5353`, 可使用 [LuCI][L] 进行配置  
 
- - 可搭配路由器自带的 Dnsmasq 使用 借助其 DNS 缓存提升查询速度
+ - 可搭配路由器自带的 Dnsmasq 使用 借助其 DNS 缓存提升查询速度  
 
- > 将 `/etc/init.d/chinadns` 中两条 `iptables` 命令注释或者删除
- >
  > 修改 Dnsmasq 配置`(/etc/dnsmasq.conf)`如下
  > ```cfg
  > no-resolv
@@ -58,3 +56,4 @@ OpenWrt's ChinaDNS-C Makefile
   [6]: https://github.com/aa65535/openwrt-dnsmasq
   [7]: https://github.com/aa65535/openwrt-shadowsocks
   [S]: http://downloads.openwrt.org/snapshots/trunk/
+  [L]: https://github.com/aa65535/openwrt-dist-luci

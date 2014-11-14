@@ -17,7 +17,7 @@ append_arg() {
 }
 
 start_dns() {
-	local enable iplist chnroute port server
+	local enable iplist port
 	config_get_bool enable $1 enable
 	[ "$enable" = 1 ] || return 0
 	config_get iplist $1 iplist

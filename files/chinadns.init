@@ -7,33 +7,25 @@ SERVICE_USE_PID=1
 SERVICE_WRITE_PID=1
 SERVICE_DAEMONIZE=1
 
-append_arg() {
-	local cfg="$1"
-	local var="$2"
-	local opt="$3"
-	local val
-	config_get val "$cfg" "$var"
-	[ -n "$val" ] && args="$args $opt \"$val\""
-}
-
-start_dns() {
-	local enable iplist port
+start_chinadns() {
+	local enable iplist port server chnroute
 	config_get_bool enable $1 enable
 	[ "$enable" = 1 ] || return 0
-	config_get iplist $1 iplist
-	[ -z "$iplist" ] && return 2
 	config_get port $1 port
-	[ -z "$port" ] && return 2
-	args=""
-	append_arg $1 server "-s"
-	append_arg $1 chnroute "-c"
-	eval "service_start /usr/bin/chinadns -l $iplist -p $port $args"
+	config_get server $1 server
+	config_get iplist $1 iplist
+	config_get chnroute $1 chnroute
+	service_start /usr/bin/chinadns \
+		-p ${port:-5353} \
+		-s ${server:-114.114.114.114,8.8.4.4} \
+		-l ${iplist:-/etc/chinadns_iplist.txt} \
+		-c ${chnroute:-/etc/chinadns_chnroute.txt}
 	return $?
 }
 
 start() {
 	config_load chinadns
-	config_foreach start_dns chinadns
+	config_foreach start_chinadns chinadns
 }
 
 stop() {

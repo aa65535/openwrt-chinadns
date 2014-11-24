@@ -47,6 +47,7 @@ OpenWrt's ChinaDNS-C Makefile
  [openwrt-dnsmasq][6]     | OpenWrt's Dnsmasq Patch & Makefile
  [openwrt-shadowsocks][7] | OpenWrt's ShadowSocks Makefile
  [openwrt-shadowvpn][5]   | OpenWrt's ShadowVPN Makefile
+ [openwrt-dist-luci][L]   | LuCI Applications of OpenWrt-dist
 
 
   [1]: https://github.com/clowwindy/ChinaDNS-C

@@ -1,7 +1,7 @@
 OpenWrt's ChinaDNS-C Makefile
 ===
 
- > 编译时默认从 [clowwindy/ChinaDNS-C][1] 下载最新源码
+ > 当前版本: 1.1.8-1  
 
 编译说明
 ---

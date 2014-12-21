@@ -1,18 +1,24 @@
+#
+# Copyright (C) 2014 OpenWrt-dist
+#
+# This is free software, licensed under the MIT.
+# See /LICENSE for more information.
+#
+
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ChinaDNS-C
 PKG_VERSION:=1.1.8
 PKG_RELEASE:=1
 
-PKG_SOURCE:=master.zip
-PKG_SOURCE_URL:=https://github.com/clowwindy/ChinaDNS-C/archive
-PKG_CAT:=unzip
+PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz
+PKG_SOURCE_URL:=https://github.com/aa65535/openwrt-chinadns/releases/download/v$(PKG_VERSION)
 PKG_MAINTAINER:=clowwindy <clowwindy42@gmail.com>
 
-PKG_LICENSE:=GPLv2
-PKG_LICENSE_FILES:=COPYING
+PKG_LICENSE:=MIT
+PKG_LICENSE_FILES:=LICENSE
 
-PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)/$(PKG_NAME)-master
+PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)/$(PKG_NAME)-$(PKG_VERSION)
 
 PKG_INSTALL:=1
 PKG_FIXUP:=autoreconf
@@ -29,7 +35,7 @@ define Package/ChinaDNS-C
 endef
 
 define Package/ChinaDNS-C/description
-A DNS forwarder that filters bad IPs.
+A DNS forwarder that ignores incorrect(you knew it) responses.
 endef
 
 define Package/ChinaDNS-C/conffiles
@@ -49,5 +55,4 @@ define Package/ChinaDNS-C/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/src/chinadns $(1)/usr/bin
 endef
 
-$(shell $(RM) $(DL_DIR)/$(PKG_SOURCE))
 $(eval $(call BuildPackage,ChinaDNS-C))

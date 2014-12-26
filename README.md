@@ -1,7 +1,7 @@
 OpenWrt's ChinaDNS-C Makefile
 ===
 
- > 当前版本: 1.1.8-1  
+ > 当前版本: 1.1.9-1  
 
 编译说明
 ---

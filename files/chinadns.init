@@ -11,15 +11,22 @@ start_chinadns() {
 	local enable iplist port server chnroute
 	config_get_bool enable $1 enable
 	[ "$enable" = 1 ] || return 0
+	config_get_bool bidirectional $1 bidirectional
 	config_get port $1 port
 	config_get server $1 server
 	config_get iplist $1 iplist
 	config_get chnroute $1 chnroute
+	config_get result_delay $1 result_delay
+	if [ "$bidirectional" = 1 ]; then
+		bidirectional_d="-d"
+	fi
 	service_start /usr/bin/chinadns \
 		-p ${port:-5353} \
 		-s ${server:-114.114.114.114,8.8.4.4} \
 		-l ${iplist:-/etc/chinadns_iplist.txt} \
-		-c ${chnroute:-/etc/chinadns_chnroute.txt}
+		-c ${chnroute:-/etc/chinadns_chnroute.txt} \
+		-y ${result_delay:-0.3} \
+		$bidirectional_d
 	return $?
 }
 

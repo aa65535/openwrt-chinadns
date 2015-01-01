@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2014 OpenWrt-dist
+# Copyright (C) 2015 OpenWrt-dist
 #
 # This is free software, licensed under the MIT.
 # See /LICENSE for more information.
@@ -8,7 +8,7 @@
 include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ChinaDNS-C
-PKG_VERSION:=1.1.9
+PKG_VERSION:=1.2.0
 PKG_RELEASE:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION).tar.gz

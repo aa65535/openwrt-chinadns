@@ -1,5 +1,4 @@
 #!/bin/sh /etc/rc.common
-# chinadns init script
 
 START=90
 
@@ -7,26 +6,42 @@ SERVICE_USE_PID=1
 SERVICE_WRITE_PID=1
 SERVICE_DAEMONIZE=1
 
+xappend() {
+	parms="$parms $1"
+}
+
+append_bool() {
+	local section="$1"
+	local option="$2"
+	local value="$3"
+	local _loctmp
+	config_get_bool _loctmp "$section" "$option"
+	[ "$_loctmp" = 1 ] || return 0
+	xappend "$value"
+}
+
+append_parm() {
+	local section="$1"
+	local option="$2"
+	local switch="$3"
+	local _loctmp
+	config_get _loctmp "$section" "$option"
+	[ -z "$_loctmp" ] && return 0
+	xappend "$switch $_loctmp"
+}
+
 start_chinadns() {
-	local enable iplist port server chnroute
+	local enable
 	config_get_bool enable $1 enable
 	[ "$enable" = 1 ] || return 0
-	config_get_bool bidirectional $1 bidirectional
-	config_get port $1 port
-	config_get server $1 server
-	config_get iplist $1 iplist
-	config_get chnroute $1 chnroute
-	config_get result_delay $1 result_delay
-	if [ "$bidirectional" = 1 ]; then
-		bidirectional_d="-d"
-	fi
+	append_parm $1 port "-p"
+	append_parm $1 server "-s"
+	append_parm $1 iplist "-l"
+	append_parm $1 chnroute "-c"
+	append_parm $1 result_delay "-y"
+	append_bool $1 bidirectional "-d"
 	service_start /usr/bin/chinadns \
-		-p ${port:-5353} \
-		-s ${server:-114.114.114.114,8.8.4.4} \
-		-l ${iplist:-/etc/chinadns_iplist.txt} \
-		-c ${chnroute:-/etc/chinadns_chnroute.txt} \
-		-y ${result_delay:-0.3} \
-		$bidirectional_d
+		$parms
 	return $?
 }
 

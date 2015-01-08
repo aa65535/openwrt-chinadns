@@ -1,10 +1,10 @@
-ChinaDNS-C for OpenWrt
+ChinaDNS for OpenWrt
 ===
 
 简介
 ---
 
- 本项目是 [ChinaDNS-C][1] 在 OpenWrt 上的移植  
+ 本项目是 [ChinaDNS][1] 在 OpenWrt 上的移植  
  当前版本: 1.2.1-1  
  [预编译 IPK 下载][2]  
 
@@ -18,11 +18,11 @@ ChinaDNS-C for OpenWrt
    tar xjf OpenWrt-SDK-ar71xx-for-linux-x86_64-gcc-4.8-linaro_uClibc-0.9.33.2.tar.bz2
    cd OpenWrt-SDK-ar71xx-*
    # 获取 Makefile
-   git clone https://github.com/aa65535/openwrt-chinadns.git package/chinadns-c
-   # 选择要编译的包 Network -> ChinaDNS-C
+   git clone https://github.com/aa65535/openwrt-chinadns.git package/chinadns
+   # 选择要编译的包 Network -> ChinaDNS
    make menuconfig
    # 开始编译
-   make package/chinadns-c/compile V=99
+   make package/chinadns/compile V=99
    ```
 
 配置
@@ -52,9 +52,9 @@ ChinaDNS-C for OpenWrt
  [openwrt-redsocks2][R]   | RedSocks2 for OpenWrt
 
 
-  [1]: https://github.com/clowwindy/ChinaDNS-C
+  [1]: https://github.com/clowwindy/ChinaDNS
   [2]: https://sourceforge.net/projects/openwrt-dist/files/chinadns-c/
-  [3]: https://github.com/clowwindy/ChinaDNS-C/blob/master/chnroute.txt
+  [3]: https://github.com/clowwindy/ChinaDNS/blob/master/chnroute.txt
   [5]: https://github.com/aa65535/openwrt-shadowvpn
   [6]: https://github.com/aa65535/openwrt-dnsmasq
   [7]: https://github.com/shadowsocks/openwrt-shadowsocks

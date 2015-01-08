@@ -53,7 +53,7 @@ ChinaDNS for OpenWrt
 
 
   [1]: https://github.com/clowwindy/ChinaDNS
-  [2]: https://sourceforge.net/projects/openwrt-dist/files/chinadns-c/
+  [2]: https://sourceforge.net/projects/openwrt-dist/files/chinadns/
   [3]: https://github.com/clowwindy/ChinaDNS/blob/master/chnroute.txt
   [5]: https://github.com/aa65535/openwrt-shadowvpn
   [6]: https://github.com/aa65535/openwrt-dnsmasq

@@ -36,13 +36,10 @@ start_chinadns() {
 	[ "$enable" = 1 ] || return 0
 	append_parm $1 port "-p"
 	append_parm $1 server "-s"
-	append_parm $1 iplist "-l"
 	append_parm $1 chnroute "-c"
-	append_bool $1 compression "-m"
-	append_parm $1 result_delay "-y"
 	append_bool $1 bidirectional "-d"
 	service_start /usr/bin/chinadns \
-		$parms
+		$parms -m
 	return $?
 }
 

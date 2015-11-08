@@ -1,0 +1,52 @@
+From 404c424fa8dbc34a4273b5ad54b15091efa5d4b4 Mon Sep 17 00:00:00 2001
+From: Jian Chang <aa65535@live.com>
+Date: Sat, 7 Nov 2015 10:07:14 +0800
+Subject: [PATCH 1/2] shorten timeout
+
+---
+ src/chinadns.c | 11 ++++-------
+ 1 file changed, 4 insertions(+), 7 deletions(-)
+
+diff --git a/src/chinadns.c b/src/chinadns.c
+index 6716554..930e6de 100644
+--- a/src/chinadns.c
++++ b/src/chinadns.c
+@@ -159,8 +159,7 @@ static void usage(void);
+ #ifdef DEBUG
+ #define DLOG(s...) LOG(s)
+ void __gcov_flush(void);
+-static void gcov_handler(int signum)
+-{
++static void gcov_handler(int signum) {
+   __gcov_flush();
+   exit(1);
+ }
+@@ -199,8 +198,8 @@ int main(int argc, char **argv) {
+     FD_SET(remote_sock, &readset);
+     FD_SET(remote_sock, &errorset);
+     struct timeval timeout = {
+-      .tv_sec = 0,
+-      .tv_usec = 50 * 1000,
++      .tv_sec = 5,
++      .tv_usec = 0,
+     };
+     if (-1 == select(max_fd, &readset, NULL, &errorset, &timeout)) {
+       ERR("select");
+@@ -628,7 +627,7 @@ static void dns_handle_local() {
+                              dns_server_addrs[i].addrlen))
+               ERR("sendto");
+           }
+-          for (i =  has_chn_dns; i < dns_servers_len; i++) {
++          for (i = has_chn_dns; i < dns_servers_len; i++) {
+             if (-1 == sendto(remote_sock, compression_buf, len + 1, 0,
+                              dns_server_addrs[i].addr,
+                              dns_server_addrs[i].addrlen))
+@@ -914,5 +913,3 @@ Forward DNS requests.\n\
+ \n\
+ Online help: <https://github.com/clowwindy/ChinaDNS>\n");
+ }
+-
+-
+-- 
+2.6.2.windows.1
+

@@ -1,14 +1,14 @@
-From fa526047e2018240943430d46dc2382285cab014 Mon Sep 17 00:00:00 2001
+From c4dd9e1e752b604aa78b6e182fc4ef2e9f3f7347 Mon Sep 17 00:00:00 2001
 From: Jian Chang <aa65535@live.com>
 Date: Thu, 12 Nov 2015 14:41:50 +0800
-Subject: [PATCH 2/3] refine chnroute list
+Subject: [PATCH 1/2] refine chnroute list
 
 ---
  src/chinadns.c | 53 ++++++++++++++++++++++++++++-------------------------
  1 file changed, 28 insertions(+), 25 deletions(-)
 
 diff --git a/src/chinadns.c b/src/chinadns.c
-index cab6bdd..7a43eb4 100644
+index 6716554..b0d29ad 100644
 --- a/src/chinadns.c
 +++ b/src/chinadns.c
 @@ -97,6 +97,7 @@ static char *ip_list_file = NULL;

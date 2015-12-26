@@ -1,14 +1,14 @@
-From 3c5acec544c989ec62ddba943164c73b0e977b84 Mon Sep 17 00:00:00 2001
+From 30b2730ed08d6fbcdf424533a7fc53e2e5c7a54b Mon Sep 17 00:00:00 2001
 From: Jian Chang <aa65535@live.com>
 Date: Fri, 13 Nov 2015 18:50:49 +0800
-Subject: [PATCH 3/3] Use # to define trusted DNS
+Subject: [PATCH 2/2] Use # to define trusted DNS
 
 ---
  src/chinadns.c | 242 +++++++++++++++++++++++++++++++++------------------------
  1 file changed, 141 insertions(+), 101 deletions(-)
 
 diff --git a/src/chinadns.c b/src/chinadns.c
-index 7a43eb4..df1dcb7 100644
+index b0d29ad..061c139 100644
 --- a/src/chinadns.c
 +++ b/src/chinadns.c
 @@ -75,12 +75,18 @@ static int verbose = 0;

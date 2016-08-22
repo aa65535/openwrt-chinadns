@@ -36,6 +36,10 @@ ChinaDNS for OpenWrt
    >「基本设置」 **本地服务器** 填写 `127.0.0.1#5353`  
    >「HOSTS和解析文件」勾选 **忽略解析文件**  
 
+ - 对于 UDP 不稳定的 ISP, 建议搭配 [DNS-Forwarder][D] 使用  
+
+   >ChinaDNS 的上游 DNS 服务器使用 DNS-Forwarder 即可  
+
  - [/etc/chinadns_chnroute.txt][3] 可以使用下面命令更新
    ```bash
     wget -O- 'http://ftp.apnic.net/apnic/stats/apnic/delegated-apnic-latest' | awk -F\| '/CN\|ipv4/ { printf("%s/%d\n", $4, 32-log($5)/log(2)) }' > /etc/chinadns_chnroute.txt
@@ -52,12 +56,13 @@ ChinaDNS for OpenWrt
  [openwrt-redsocks2][R]   | RedSocks2 for OpenWrt
 
 
-  [1]: https://github.com/clowwindy/ChinaDNS
+  [1]: https://github.com/shadowsocks/ChinaDNS
   [2]: https://sourceforge.net/projects/openwrt-dist/files/chinadns/
-  [3]: https://github.com/clowwindy/ChinaDNS/blob/master/chnroute.txt
+  [3]: https://github.com/shadowsocks/ChinaDNS/blob/master/chnroute.txt
   [5]: https://github.com/aa65535/openwrt-shadowvpn
   [6]: https://github.com/aa65535/openwrt-dnsmasq
   [7]: https://github.com/shadowsocks/openwrt-shadowsocks
   [R]: https://github.com/aa65535/openwrt-redsocks2
   [S]: http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk
   [L]: https://github.com/aa65535/openwrt-dist-luci
+  [D]: https://github.com/aa65535/openwrt-dns-forwarder

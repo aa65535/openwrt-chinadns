@@ -38,7 +38,7 @@ ChinaDNS for OpenWrt
 
  - 对于 UDP 不稳定的 ISP, 建议搭配 [DNS-Forwarder][D] 使用  
 
-   >ChinaDNS 的上游 DNS 服务器使用 DNS-Forwarder 即可  
+   >ChinaDNS 的上游 DNS 服务器使用 DNS-Forwarder 即可, 参考 [Wiki][W]  
 
  - [/etc/chinadns_chnroute.txt][3] 可以使用下面命令更新
    ```bash
@@ -66,3 +66,4 @@ ChinaDNS for OpenWrt
   [S]: http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk
   [L]: https://github.com/aa65535/openwrt-dist-luci
   [D]: https://github.com/aa65535/openwrt-dns-forwarder
+  [W]: https://github.com/aa65535/openwrt-chinadns/wiki/Use-DNS-Forwarder

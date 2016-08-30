@@ -1,12 +1,12 @@
 ChinaDNS for OpenWrt
 ===
 
+ [![Download][B]][2]
+
 简介
 ---
 
  本项目是 [ChinaDNS][1] 在 OpenWrt 上的移植  
- 当前版本: 1.3.2-4  
- [预编译 IPK 下载][2]  
 
 编译
 ---
@@ -56,14 +56,15 @@ ChinaDNS for OpenWrt
  [openwrt-redsocks2][R]   | RedSocks2 for OpenWrt
 
 
-  [1]: https://github.com/shadowsocks/ChinaDNS
-  [2]: https://sourceforge.net/projects/openwrt-dist/files/chinadns/
-  [3]: https://github.com/shadowsocks/ChinaDNS/blob/master/chnroute.txt
-  [5]: https://github.com/aa65535/openwrt-shadowvpn
-  [6]: https://github.com/aa65535/openwrt-dnsmasq
-  [7]: https://github.com/shadowsocks/openwrt-shadowsocks
-  [R]: https://github.com/aa65535/openwrt-redsocks2
-  [S]: http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk
-  [L]: https://github.com/aa65535/openwrt-dist-luci
-  [D]: https://github.com/aa65535/openwrt-dns-forwarder
-  [W]: https://github.com/aa65535/openwrt-chinadns/wiki/Use-DNS-Forwarder
+ [1]: https://github.com/shadowsocks/ChinaDNS
+ [2]: https://github.com/aa65535/openwrt-chinadns/releases
+ [3]: https://github.com/shadowsocks/ChinaDNS/blob/master/chnroute.txt
+ [5]: https://github.com/aa65535/openwrt-shadowvpn
+ [6]: https://github.com/aa65535/openwrt-dnsmasq
+ [7]: https://github.com/shadowsocks/openwrt-shadowsocks
+ [R]: https://github.com/aa65535/openwrt-redsocks2
+ [S]: http://wiki.openwrt.org/doc/howto/obtain.firmware.sdk
+ [L]: https://github.com/aa65535/openwrt-dist-luci
+ [D]: https://github.com/aa65535/openwrt-dns-forwarder
+ [W]: https://github.com/aa65535/openwrt-chinadns/wiki/Use-DNS-Forwarder
+ [B]: https://img.shields.io/badge/Download-1.3.2--4-blue.svg

@@ -5,7 +5,7 @@ ChinaDNS for OpenWrt
 ---
 
  本项目是 [ChinaDNS][1] 在 OpenWrt 上的移植  
- 当前版本: 1.3.2-3  
+ 当前版本: 1.3.2-4  
  [预编译 IPK 下载][2]  
 
 编译

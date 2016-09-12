@@ -17,8 +17,8 @@ PKG_SOURCE_URL:=https://github.com/aa65535/openwrt-chinadns/releases/download/v$
 PKG_MD5SUM:=c529ac231aed4e5874251639f77e92de
 
 PKG_LICENSE:=GPLv3
-PKG_LICENSE_FILES:=COPYING
-PKG_MAINTAINER:=clowwindy <clowwindy42@gmail.com>
+PKG_LICENSE_FILES:=LICENSE
+PKG_MAINTAINER:=Jian Chang <aa65535@live.com>
 
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)/$(PKG_NAME)-$(PKG_VERSION)
 
@@ -32,12 +32,12 @@ include $(INCLUDE_DIR)/package.mk
 define Package/ChinaDNS
 	SECTION:=net
 	CATEGORY:=Network
-	TITLE:=ChinaDNS
-	URL:=https://github.com/clowwindy/ChinaDNS
+	TITLE:=Protect yourself against DNS poisoning in China.
+	URL:=https://github.com/shadowsocks/ChinaDNS
 endef
 
 define Package/ChinaDNS/description
-A DNS forwarder that ignores incorrect(you knew it) responses.
+Protect yourself against DNS poisoning in China.
 endef
 
 define Package/ChinaDNS/conffiles

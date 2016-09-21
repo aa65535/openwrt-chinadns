@@ -68,5 +68,5 @@ ChinaDNS for OpenWrt
  [L]: https://github.com/aa65535/openwrt-dist-luci
  [D]: https://github.com/aa65535/openwrt-dns-forwarder
  [W]: https://github.com/aa65535/openwrt-chinadns/wiki/Use-DNS-Forwarder
- [B]: https://img.shields.io/badge/Download-v1.3.2--4-blue.svg
+ [B]: https://img.shields.io/github/release/aa65535/openwrt-chinadns.svg
  [S]: https://wiki.openwrt.org/doc/howto/obtain.firmware.sdk

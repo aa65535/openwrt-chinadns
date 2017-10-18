@@ -1,0 +1,25 @@
+From d17e52e041573e705287ae8735def6785e8014ef Mon Sep 17 00:00:00 2001
+From: Jian Chang <aa65535@live.com>
+Date: Wed, 18 Oct 2017 11:50:00 +0800
+Subject: [PATCH 3/3] use larger BUF_SIZE
+
+---
+ src/chinadns.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/src/chinadns.c b/src/chinadns.c
+index 061c139..245f376 100644
+--- a/src/chinadns.c
++++ b/src/chinadns.c
+@@ -68,7 +68,7 @@ typedef struct {
+ 
+ 
+ // avoid malloc and free
+-#define BUF_SIZE 512
++#define BUF_SIZE 1024
+ static char global_buf[BUF_SIZE];
+ static char compression_buf[BUF_SIZE];
+ static int verbose = 0;
+-- 
+2.13.0.windows.1
+

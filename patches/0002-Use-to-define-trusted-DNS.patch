@@ -1,7 +1,7 @@
 From 30b2730ed08d6fbcdf424533a7fc53e2e5c7a54b Mon Sep 17 00:00:00 2001
 From: Jian Chang <aa65535@live.com>
 Date: Fri, 13 Nov 2015 18:50:49 +0800
-Subject: [PATCH 2/2] Use # to define trusted DNS
+Subject: [PATCH 2/3] Use # to define trusted DNS
 
 ---
  src/chinadns.c | 242 +++++++++++++++++++++++++++++++++------------------------
@@ -408,5 +408,5 @@ index b0d29ad..061c139 100644
      } else {
        return -1;
 -- 
-2.6.2.windows.1
+2.13.0.windows.1
 

@@ -1,7 +1,7 @@
 #!/bin/sh /etc/rc.common
 #
 # Copyright (C) 2014-2018 OpenWrt-dist
-# Copyright (C) 2014-2018 Jian Chang <aa65535@live.com>
+# Copyright (C) 2014-2020 Jian Chang <aa65535@live.com>
 #
 # This is free software, licensed under the GNU General Public License v3.
 # See /LICENSE for more information.
@@ -28,9 +28,9 @@ append_parm() {
 	local switch="$3"
 	local default="$4"
 	local _loctmp
-	config_get _loctmp "$section" "$option"
-	[ -n "$_loctmp" -o -n "$default" ] || return 0
-	procd_append_param command "$switch" "${_loctmp:-$default}"
+	config_get _loctmp "$section" "$option" "$default"
+	[ -n "$_loctmp" ] || return 0
+	procd_append_param command "$switch" "$_loctmp"
 }
 
 start_instance() {
